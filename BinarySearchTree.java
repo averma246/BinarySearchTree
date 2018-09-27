@@ -53,3 +53,68 @@ public class BinarySearchTree{
     
     return;
   }
+  //=========================================================================================
+  
+  
+  
+  //=================================== REMOVE ==============================================
+  public String remove(String key){
+    if(numElts == 0) return null;
+    
+    String removed = removeHelper(key, tree);
+    
+    if(removed != null){
+      numElts--;
+    }
+    
+    return removed;
+  }
+  //=========================================================================================
+  
+  
+  
+  //================================== PRINT ================================================
+  
+  public void inOrderTraverse(){
+    //call helper method to allow for recursion
+    printHelper(tree);
+  }
+  //=========================================================================================
+  
+  
+  
+  //================================== HELPER METHODS =======================================
+  
+  //-----addHelper---------------------------------------------------------------------------
+  //helper for add -- allows for recursion through tree to find the place where the new 
+  //element needs to be added
+  //returns true if the element was successfully added -- false if the element was already
+  //there and could not be added a second time
+  //-----------------------------------------------------------------------------------------
+  
+  private boolean addHelper(String key, Node tree){
+    //comparing the key and the value of the current node
+    //if comparison is negative, key is smaller than the current node's value
+    //if comparison is positive, key is larger than the current node's value
+    int comparison = key.compareTo(tree.value);
+    
+    //if comparison is 0, key is already in tree
+    if(comparison == 0) return false;
+    
+    //checking the left side of the node
+    else if(comparison < 0){
+      //if nothing exists to the left, the new node can be added there
+      if(tree.left == null){
+        tree.left = new Node(key);
+        tree.left.parent = tree;
+        return true;
+      }
+      
+      
+  
+  
+  
+  
+  
+  
+  
