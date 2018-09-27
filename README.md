@@ -1,3 +1,3 @@
 # BinarySearchTree
 
-Implementation of a Binary Search Tree using 
+Implementation of a Binary Search Tree  
