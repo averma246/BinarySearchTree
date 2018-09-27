@@ -110,6 +110,11 @@ public class BinarySearchTree{
         return true;
       }
       
+      //if some node exist to the left, all method again on that node
+      else{
+        return addHelper(key, tree.left);
+      }
+    }
       
   
   
